@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Box-sizing  obliczenia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            margin-bottom: 40px;
+        }
+
+        .content-box {
+            width: 200px;
+            padding: 20px;
+            border: 10px solid black;
+            box-sizing: content-box;
+            background-color: rgb(173, 179, 230);
+            margin-bottom: 10px;
+        }
+
+        .border-box {
+            width: 200px;
+            padding: 20px;
+            border: 10px solid black;
+            box-sizing: border-box;
+            background-color: rgb(197, 12, 151);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Obliczanie rzeczywistej szerokości elementu</h1>
+
+    <h2>1. box-sizing: content-box (domyślne)</h2>
+    <div class="container">
+        <div class="content-box">content-box</div>
+        <h3>
+            width: 200px<br>
+            padding: 20px + 20px = 40px<br>
+            border: 10px + 10px = 20px<br><br>
+            Rzeczywista szerokość:<br>
+            200px + 40px + 20px = 260px
+        </h3>
+    </div>
+
+    <h2>2. box-sizing: border-box</h2>
+    <div class="container">
+        <div class="border-box">border-box</div>
+        <h3>
+            width: 200px obejmuje padding i border<br><br>
+            Rzeczywista szerokość:<br>
+            200px
+        </h3>
+    </div>
+
+    <h2>W jakich sytuacjach box-sizing: border-box ułatwia pracę projektanta?</h2>
+    <h3>
+        box-sizing: border-box ułatwia pracę podczas tworzenia layoutów,
+        ponieważ szerokość elementu jest zawsze stała, niezależnie od paddingu
+        i obramowania. Dzięki temu łatwiej tworzyć kolumny, układy responsywne
+        oraz kontrolować rozmieszczenie elementów na stronie bez dodatkowych
+        obliczeń.
+    </h3>
+</body>
+</html>
